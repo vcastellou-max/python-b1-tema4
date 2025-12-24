@@ -52,10 +52,19 @@ Exemple:
 """
 
 def read_and_write():
-    # Write here your code
-    pass
+    name = str(input("Insert your name: "))
+    age = str(input("Insert your age: "))
+
+    with open ('file.txt' , "w") as f:
+        f.write(name + "\n") #Si pongo mas de una variable no pueden estar juntas en la misma linea
+        f.write(str(age) + "\n") #Por eso separo name y age
+
+    with open ('file.txt' , "r") as fr:
+        lines = fr.readlines()
+        for line in lines:
+            print(line.strip()) #El strip es para que no haya separaciones grandes entre name y age
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# read_and_write()
+read_and_write()

@@ -72,20 +72,24 @@ def create_list(length_list):
     """
     Creates two lists of integers to illustrate the difference between RAM and
     Heap memory.
-
     Args:
     length_list: A numeric integer value indicating the length of the lists to
     be created.
-
     Returns:
     A tuple containing two lists of integers, the first one created in RAM and
     the second one created in Heap by reusing the first list.
     """
+    if length_list<0:
+        raise ValueError("The number must be positive")
+#List in RAM
+    list_ram = []
+    for _ in range(length_list):
+        list_ram.append(random.randint(0, 100))
+    return list_ram
 
-    # Write here your code
-    pass
-
-
+#List in heap
+    heap_list=copy.deepcopy('list_to_copy')
+    return heap_list
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
-# print(create_list(6))
+print(create_list(6))

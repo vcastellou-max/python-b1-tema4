@@ -33,17 +33,19 @@ Exemple:
 
 """
 
-list_1 = [1, 2, 3, 4, 5,6]
+list_1 = [1, 2, 3, 4, 5]
 list_2 = [4, 5, 6, 7, 8]
 
 
 def find_intersection(list_1, list_2):
-    # Write here your code
-    pass
+    set1=set(list_1)
+    set2=set(list_2)
+    intersection = set1 & set2
+    return intersection
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
 
-# print(find_intersection([1, 2, 3, 4], [3, 4, 5, 6]))
+print(find_intersection([1, 2, 3, 4], [3, 4, 5, 6]))
 # print(find_intersection(['apple', 'banana', 'orange'], ['banana', 'kiwi', 'apple']))
